@@ -1,0 +1,22 @@
+﻿@model TarefaViewModel
+
+
+    <div class="container">
+        <div class="container-tarefas">
+            @foreach (var item in Model.Tarefas) {
+                <div class="tarefa-single">
+                    <h1>@item.TituloTarefa</h1>
+                    <div class="container-dia-horario">
+                        <h6>Dia: @item.DiaTarefa</h6>
+                        <h6>Horário: @item.Horario</h6>
+                    </div>
+                   <div class="container-crud-tarefa">
+                        <a asp-controller="Tarefas" asp-action="Edit" asp-route-id="@item.TarefaId"><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a asp-controller="Tarefas" asp-action="Details" asp-route-id="@item.TarefaId">Detalhes</a> 
+                        <a asp-controller="Tarefas" asp-action="Delete" asp-route-id="@item.TarefaId"><i class="fa-solid fa-trash"></i></a>
+                   
+                   </div>
+                </div>
+            }
+        </div>
+    </div>

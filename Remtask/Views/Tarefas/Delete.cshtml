@@ -1,0 +1,17 @@
+﻿@model Remtask.Models.Tarefa
+
+<div class="container">
+
+    <div class="card">
+        <h1 style="text-align: center;">Tem certeza que deseja deletar a tarefa: "@Html.DisplayFor(model => model.TituloTarefa)" ?</h1>
+        <form asp-controller="Tarefas" asp-action="Delete" class="flex-collum">
+            <input type="hidden" asp-for="TarefaId" />
+           <input type="submit" value="Delete" class="btn-criar-tarefa" style="margin-top: 40px;"/>
+           <a asp-controller="Home" asp-action="Index" class="voltar" style="text-align: center;"><i class="fa-solid fa-arrow-left"></i> Voltar</a>
+        </form>
+    </div>
+
+</div>
+
+
+  

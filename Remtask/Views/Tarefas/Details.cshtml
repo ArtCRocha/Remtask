@@ -1,0 +1,44 @@
+﻿@model Remtask.Models.Tarefa
+
+<div class="container">
+    <div class="card">
+        <h1>Detalhes da tarefa</h1>
+
+        <div>
+            <dl class="row">
+                <div style="display: flex; justify-content: space-around; margin-top: 20px;">
+                    <dt class="font-size-20">
+                        @Html.DisplayNameFor(model => model.TituloTarefa)
+                    </dt>
+                    <dd class="font-size-20">
+                        @Html.DisplayFor(model => model.TituloTarefa)
+                    </dd>
+                </div>
+
+                 <div style="display: flex; justify-content: space-around;">
+                <dt class="font-size-20">
+                    @Html.DisplayNameFor(model => model.DiaTarefa)
+                </dt>
+                <dd class="font-size-20">
+                    @Html.DisplayFor(model => model.DiaTarefa)
+                </dd>
+                </div>
+
+                 <div style="display: flex; justify-content: space-around;">
+                <dt class="font-size-20">
+                    @Html.DisplayNameFor(model => model.Horario)
+                </dt>
+                <dd class="font-size-20">
+                    @Html.DisplayFor(model => model.Horario)
+                </dd>
+                </div>
+            </dl>
+        </div>
+        <div>
+    <a asp-controller="Tarefas" asp-action="Edit" asp-route-id="@Model?.TarefaId" class="voltar"><i class="fa-solid fa-pen-to-square"></i></a> |
+     <a asp-controller="Home" asp-action="Index" class="voltar" style="margin-top: 20px;"><i class="fa-solid fa-arrow-left"></i> Voltar</a>
+</div>
+
+    </div>
+</div>
+

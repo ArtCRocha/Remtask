@@ -1,0 +1,36 @@
+﻿@model Remtask.Models.Tarefa
+
+<div class="container">
+    <div class="card">
+        <h1>Editar Tarefa</h1>
+
+        <form asp-action="Edit" style="margin-top: 20px;">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="TarefaId" />
+            <div>
+                <input asp-for="TituloTarefa" type="text" placeholder="Nome da tarefa" />
+                <span asp-validation-for="TituloTarefa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input asp-for="DiaTarefa" type="text" placeholder="Dia da tarefa" />
+                <span asp-validation-for="DiaTarefa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input asp-for="Horario" type="text" placeholder="Horário da tarefa" />
+                <span asp-validation-for="Horario" class="text-danger"></span>
+            </div>
+            <div>
+                <input type="submit" value="Savar alterações" class="btn-criar-tarefa" />
+            </div>
+        </form>
+        <div>
+             <a asp-controller="Home" asp-action="Index" class="voltar" style="margin-top: 20px;"><i class="fa-solid fa-arrow-left"></i> Voltar</a>
+        </div>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
